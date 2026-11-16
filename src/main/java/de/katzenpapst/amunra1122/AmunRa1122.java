@@ -1,16 +1,19 @@
 package de.katzenpapst.amunra1122;
 
 import de.katzenpapst.amunra1122.config.ARConfig1122;
+import de.katzenpapst.amunra1122.registry.ARCelestialBodies1122;
 import de.katzenpapst.amunra1122.registry.ARContent1122;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @Mod(modid = AmunRa1122.MODID, name = AmunRa1122.NAME, version = AmunRa1122.VERSION,
         dependencies = "required-after:GalacticraftCore;required-after:GalacticraftPlanets")
@@ -26,13 +29,12 @@ public final class AmunRa1122 {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         ARConfig1122.load(event.getSuggestedConfigurationFile());
-        event.getModLog().info("Amun-Ra 1.12.2 port starting; features are being migrated incrementally.");
+        event.getModLog().info("Amun-Ra 1.12.2 port starting.");
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        // Feature integrations and Galacticraft celestial registration will be
-        // restored here as their 1.7.10 implementations are ported.
+        ARCelestialBodies1122.register();
     }
 
     @Mod.EventHandler
@@ -48,12 +50,12 @@ public final class AmunRa1122 {
     }
 
     @SubscribeEvent
-    public static void registerBlocks(net.minecraftforge.event.RegistryEvent.Register<net.minecraft.block.Block> event) {
+    public static void registerBlocks(RegistryEvent.Register<Block> event) {
         ARContent1122.registerBlocks(event.getRegistry());
     }
 
     @SubscribeEvent
-    public static void registerItems(net.minecraftforge.event.RegistryEvent.Register<net.minecraft.item.Item> event) {
+    public static void registerItems(RegistryEvent.Register<Item> event) {
         ARContent1122.registerItems(event.getRegistry());
     }
 }

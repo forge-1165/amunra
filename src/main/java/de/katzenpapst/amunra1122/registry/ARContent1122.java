@@ -7,11 +7,11 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.IForgeRegistry;
 
-/** Minimal registry-event based content port; legacy blocks/items are migrated here incrementally. */
+/** Forge 1.12.2 registry-event based content registration. */
 public final class ARContent1122 {
     public static final Block EXAMPLE_BLOCK = new Block(Material.ROCK)
             .setRegistryName(new ResourceLocation("amunra", "port_example_block"))
-            .setTranslationKey("amunra.port_example_block");
+            .setUnlocalizedName("amunra.port_example_block");
 
     public static final Item EXAMPLE_BLOCK_ITEM = new ItemBlock(EXAMPLE_BLOCK)
             .setRegistryName(EXAMPLE_BLOCK.getRegistryName());
