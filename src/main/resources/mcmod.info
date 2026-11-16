@@ -1,16 +1,14 @@
-[
-  {
-    "modid": "GalacticraftAmunRa",
-    "name": "Amun-Ra",
-    "description": "An addon for Galacticraft Legacy.",
-    "version": "${version}",
-    "mcversion": "${mcversion}",
-    "url": "",
-    "updateUrl": "",
-    "authorList": ["Pra"],
-    "credits": "Originally created by Pra; Forge 1.12.2 migration in progress.",
-    "logoFile": "",
-    "screenshots": [],
-    "dependencies": ["required-after:GalacticraftCore"]
-  }
-]
+{
+  "modid": "GalacticraftAmunRa",
+  "name": "Amun-Ra",
+  "description": "An addon for Galacticraft Legacy.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Pra"],
+  "credits": "Originally created by Pra; Forge 1.12.2 migration in progress.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": ["required-after:GalacticraftCore", "required-after:GalacticraftPlanets"]
+}

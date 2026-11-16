@@ -30,9 +30,19 @@ repositories {
 }
 
 dependencies {
-    // Place Galacticraft-1.12.2-4.0.5.jar in ./libs (the jar is intentionally not committed).
-    // deobfCompile lets ForgeGradle remap a standard Galacticraft release jar for development.
+    // Put the Galacticraft Legacy 4.0.5 release jar in ./libs (do not commit it).
     deobfCompile files('libs/Galacticraft-1.12.2-4.0.5.jar')
+}
+
+// The original 1.7.10 implementation is retained in the repository as migration
+// reference, but it uses removed FML packages and cannot be compiled on 1.12.2.
+// New 1.12.2 code lives in de.katzenpapst.amunra1122 until each feature is ported.
+sourceSets {
+    main {
+        java {
+            exclude 'de/katzenpapst/amunra/**'
+        }
+    }
 }
 
 processResources {

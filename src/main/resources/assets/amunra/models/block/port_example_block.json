@@ -1,0 +1,12 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "all": "amunra:blocks/port_example_block"
+    }
+  },
+  "variants": {
+    "normal": [{ "model": "cube_all" }],
+    "inventory": [{ "model": "cube_all" }]
+  }
+}
